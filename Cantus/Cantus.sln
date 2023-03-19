@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantus", "Cantus\Cantus.csproj", "{D95616E7-4FA4-4201-8C11-C3D9530C6D32}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantus", "Cantus\Cantus.csproj", "{0553E0C9-74BD-4460-B971-BEEAB127CE61}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D95616E7-4FA4-4201-8C11-C3D9530C6D32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D95616E7-4FA4-4201-8C11-C3D9530C6D32}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D95616E7-4FA4-4201-8C11-C3D9530C6D32}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D95616E7-4FA4-4201-8C11-C3D9530C6D32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0553E0C9-74BD-4460-B971-BEEAB127CE61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0553E0C9-74BD-4460-B971-BEEAB127CE61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0553E0C9-74BD-4460-B971-BEEAB127CE61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0553E0C9-74BD-4460-B971-BEEAB127CE61}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {54241F50-4184-4D12-A893-F57316902479}
+		SolutionGuid = {B8E8976A-D03E-4AAE-8FEF-9D600CCBACF6}
 	EndGlobalSection
 EndGlobal
