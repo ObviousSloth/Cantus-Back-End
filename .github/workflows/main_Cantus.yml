@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_0337079c1f744a12af85288717fc0b8c }}/cantus-web-app:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./Cantus/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
