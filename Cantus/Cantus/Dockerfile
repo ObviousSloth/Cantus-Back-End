@@ -11,7 +11,7 @@ COPY ["Cantus/Cantus/Cantus.csproj", "Cantus/"]
 RUN dotnet restore "Cantus/Cantus.csproj"
 COPY . .
 WORKDIR "/src/Cantus"
-RUN dotnet build "Cantus.csproj" -c Release -o /app/build
+RUN dotnet build "Cantus.csproj" -c Release -o /app/build/Cantus.dll
 
 FROM build AS publish
 RUN dotnet publish "Cantus.csproj" -c Release -o /app/publish /p:UseAppHost=false
