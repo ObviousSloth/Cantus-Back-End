@@ -8,14 +8,16 @@ on:
 
 jobs:
 
-  copy:
+  copy_file:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: cp "${Cantus}/Cantus/$Dockerfile" "./$Cantus.md"
-      
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Copy file
+      run: |
+        cp /Cantus/Cantus/Dockerfile. ./Cantus/
   build:
 
     runs-on: ubuntu-latest
