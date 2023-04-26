@@ -18,5 +18,5 @@ RUN dotnet publish "Cantus.csproj" -c Release -o /app/publish /p:UseAppHost=fals
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app/publish /app
 ENTRYPOINT ["dotnet", "Cantus.dll"]
