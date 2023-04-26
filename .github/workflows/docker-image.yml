@@ -20,3 +20,4 @@ jobs:
 
     - name: Build the Docker image
       run: docker build . --file Cantus/Dockerfile --tag cantusbackend:$(date +%s)
+      
