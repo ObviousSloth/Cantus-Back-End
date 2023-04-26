@@ -1,4 +1,4 @@
-#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
 FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
@@ -11,6 +11,10 @@ COPY ["Cantus/Cantus/Cantus.csproj", "Cantus/"]
 RUN dotnet restore "Cantus/Cantus.csproj"
 COPY . .
 WORKDIR "/src/Cantus"
+
+# Change the ownership of the /app directory
+RUN chown -R $(whoami) /app
+
 RUN dotnet build "Cantus.csproj" -c Release -o /app/build
 
 FROM build AS publish
