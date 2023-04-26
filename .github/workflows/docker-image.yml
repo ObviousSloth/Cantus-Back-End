@@ -17,7 +17,7 @@ jobs:
 
     - name: Copy file
       run: |
-        cp /Cantus/Cantus/Dockerfile. ./Cantus/
+        cp Cantus/Cantus/Dockerfile. ./Cantus/
   build:
 
     runs-on: ubuntu-latest
