@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}cantus-web-app:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:${{ github.sha }}
         file: ./Cantus/Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'Cantus'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_8d1d84b7173c4c3e8d0d56bb37226f56 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}cantus-web-app:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:${{ github.sha }}'
