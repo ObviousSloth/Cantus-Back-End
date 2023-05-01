@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cantus", "Cantus.csproj", "{6FFF74D6-79DA-4D55-B543-2FC355552FB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6FFF74D6-79DA-4D55-B543-2FC355552FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FFF74D6-79DA-4D55-B543-2FC355552FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FFF74D6-79DA-4D55-B543-2FC355552FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FFF74D6-79DA-4D55-B543-2FC355552FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A66A3FB4-C72D-47D2-B8F8-9A0D4F971597}
+	EndGlobalSection
+EndGlobal
