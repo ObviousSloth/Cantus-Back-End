@@ -8,7 +8,7 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Cantus/Cantus.csproj", "."]
-RUN dotnet restore "./Cantus/Cantus.csproj"
+RUN dotnet restore "./Cantus.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "Cantus.csproj" -c Release -o /app/build
