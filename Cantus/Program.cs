@@ -52,7 +52,7 @@ string connString = builder.Configuration.GetConnectionString("DefaultConnection
 
 
 builder.Services.AddDbContext<UserDbContext>(options =>
-        options.UseSqlServer(conn));
+        options.UseSqlServer(connString));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
