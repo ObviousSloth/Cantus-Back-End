@@ -6,6 +6,6 @@
     {
         public UserDbContext(DbContextOptions<UserDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
+        public DbSet<CantusUser> Users { get; set; }
     }
 }

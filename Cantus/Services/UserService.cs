@@ -2,6 +2,10 @@
 using Auth0.ManagementApi.Models;
 using Cantus.Data;
 using Cantus.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Cantus.Services
 {
@@ -15,8 +19,28 @@ namespace Cantus.Services
             _managementApiClient = managementApiClient;
             _dbContext = dbContext;
         }
+     
+        public async Task<ActionResult<IEnumerable<UserDTO>>> GetUser()
+        {
+            if (_context.Users == null)
+            {
+                return NotFound();
+            }
 
-        public async Task<UserDTO> CreateUserAsync(string email, string password)
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var user = await _context.Users.Where(u => u.Auth0Id == userId).FirstOrDefaultAsync();
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(UserToDTO(user));
+        }
+
+
+
+        public async Task<CantusUser> CreateUserAsync(string email, string password)
         {
             var auth0User = await _managementApiClient.Users.CreateAsync(new UserCreateRequest
             {
@@ -25,7 +49,7 @@ namespace Cantus.Services
                 Password = password
             });
 
-            var newUser = new UserDTO
+            var newUser = new CantusUser
             {
                 Auth0Id = auth0User.UserId,
                 Email = auth0User.Email,
