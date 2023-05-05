@@ -11,17 +11,18 @@ namespace Cantus.Services
 {
     public class SpotifyService
     {
-            private readonly HttpClient _httpClient;
-            private readonly IConfiguration _configuration;
+        private readonly HttpClient _httpClient;
+        private readonly string _accessToken;
 
-            public SpotifyService(HttpClient httpClient, IConfiguration configuration)
-            {
-                _httpClient = httpClient;
-                _configuration = configuration;
+        public SpotifyService(HttpClient httpClient, string accessToken)
+        {
+            _httpClient = httpClient;
+            _accessToken = accessToken;
 
-                _httpClient.BaseAddress = new Uri("https://api.spotify.com/v1/");
-                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _configuration["Spotify:AccessToken"]);
-            }
+            _httpClient.BaseAddress = new Uri("https://api.spotify.com/v1/");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _accessToken);
+        }
+      
 
         //Search
         public async Task<HttpResponseMessage> SearchAsync(string query, string type)
@@ -76,9 +77,6 @@ namespace Cantus.Services
             var response = await _httpClient.PutAsync($"me/player/play?device_id={deviceId}", content);
             return response;
         }
-
-
-
     }
-    
+
 }

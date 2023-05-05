@@ -3,8 +3,14 @@ using Cantus.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+var configuration = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .Build();
 
 // Add services to the container.
 builder.Services.AddCors(options =>
@@ -17,7 +23,9 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<SpotifyService>();
+builder.Services.AddSingleton(configuration);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
