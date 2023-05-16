@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>Cantus</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Product</ProjectType>
+  <ProjectGuid>6fff74d6-79da-4d55-b543-2fc355552fb6</ProjectGuid>
+  <FullPath>C:\Users\jhoof\Desktop\School\6th semester\INDV PROJ\Dev\Cantus Git\Cantus-Back-End\Cantus\Cantus.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="C:\Users\jhoof\Desktop\School\6th semester\INDV PROJ\Dev\Cantus Git\Cantus-Back-End\Cantus\.sonarqube\conf\0\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePaths">C:\Users\jhoof\Desktop\School\6th semester\INDV PROJ\Dev\Cantus Git\Cantus-Back-End\Cantus\.sonarqube\out\0\Issues.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPaths">C:\Users\jhoof\Desktop\School\6th semester\INDV PROJ\Dev\Cantus Git\Cantus-Back-End\Cantus\.sonarqube\out\0</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+  <TargetFramework>net6.0</TargetFramework>
+</ProjectInfo>

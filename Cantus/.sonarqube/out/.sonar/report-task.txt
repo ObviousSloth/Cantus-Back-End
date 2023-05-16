@@ -1,0 +1,6 @@
+projectKey=CantusBackEnd
+serverUrl=http://localhost:9000
+serverVersion=10.0.0.68432
+dashboardUrl=http://localhost:9000/dashboard?id=CantusBackEnd
+ceTaskId=AYglRP0peLCYT2ruSgVe
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYglRP0peLCYT2ruSgVe
