@@ -35,13 +35,13 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
         run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
-          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+          New-Item -Path Cantus-Back-End/Cantus/.sonarqube/conf -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path Cantus-Back-End/Cantus/.sonarqube/conf
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"Cantus-CI-CD" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
+          Cantus-Back-End/Cantus/.sonarqube/conf/dotnet-sonarscanner begin /k:"Cantus-CI-CD" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="${{ secrets.SONAR_HOST_URL }}"
           dotnet build
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          Cantus-Back-End/Cantus/.sonarqube/conf/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
