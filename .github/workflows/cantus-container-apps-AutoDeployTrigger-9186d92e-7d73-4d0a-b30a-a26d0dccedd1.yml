@@ -35,8 +35,8 @@ jobs:
           registryPassword: ${{ secrets.CANTUSCONTAINERAPPS_REGISTRY_PASSWORD }}
           containerAppName: cantus-container-apps
           resourceGroup: CantusResourceGroup
-          imageToBuild: Slothh/cantus-container-apps:${{ github.sha }}
-          dockerfilePath: Dockerfile
+          imageToBuild: slothh/cantus-container-apps:${{ github.sha }}
+          dockerfilePath: ./Dockerfile
 
      
 
