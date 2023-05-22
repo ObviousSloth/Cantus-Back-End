@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:$latest
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:latest
         file: ./Cantus/Dockerfile
 
   deploy:
