@@ -17,21 +17,21 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
+      uses: docker/setup-buildx-action@v2
 
     - name: Log in to registry
-      uses: docker/login-action@v1
+      uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_26a907f3e88545da83646d56e296b13a }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_1bf012341c254761b89ef40cdac26552 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_8eb2c2debbdc43bdbc568352551ae522 }}
 
     - name: Build and push container image to registry
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:${{ github.sha }}
-        file: ./Cantus/Dockerfile
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1bf012341c254761b89ef40cdac26552 }}/slothh/cantus-web-app:${{ github.sha }}
+        file: ./Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Cantus'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_8d1d84b7173c4c3e8d0d56bb37226f56 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_15f8ee23525546a4ac3b44ec9e0a72df }}/cantus-web-app:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_47d52e7f18a0452c9679bd3906ad6d89 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_1bf012341c254761b89ef40cdac26552 }}/slothh/cantus-web-app:${{ github.sha }}'
