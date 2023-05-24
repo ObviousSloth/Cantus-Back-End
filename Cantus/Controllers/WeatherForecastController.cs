@@ -1,4 +1,7 @@
+using Cantus.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Cantus.Controllers
 {
@@ -17,6 +20,7 @@ namespace Cantus.Controllers
         {
             _logger = logger;
         }
+    
 
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
