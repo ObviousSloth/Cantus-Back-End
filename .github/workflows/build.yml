@@ -37,6 +37,10 @@ jobs:
         run: |
           New-Item -Path .\Cantus\.sonar\scanner -ItemType Directory
           dotnet tool update dotnet-sonarscanner --tool-path .\Cantus\.sonar\scanner
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build app for release
+        run: msbuild ./Cantus/Cantus.csproj -t:rebuild -verbosity:diag -property:Configuration=Release
       - name: Build and analyze
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
