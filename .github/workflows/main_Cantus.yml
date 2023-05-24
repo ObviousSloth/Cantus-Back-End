@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy container app to Azure Web App -Cantus
+name: Build and deploy container app to Azure Web App - Cantus
 
 on:
   push:
@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_2f1afcc087c6470f9980967441e11b06 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_13e3912564254220920a06bfbcb1a2e4 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_78e98309999a46a6a15e8d6e1b16eeb8 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_2ab7e13c7d884ce48ef09015bb77c879 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f1afcc087c6470f9980967441e11b06 }}/slothh/cantus-web-app:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_78e98309999a46a6a15e8d6e1b16eeb8 }}/slothh/cantus-web-app:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Cantus'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_3517a88619044a4387aeac0f4c3b5ed6 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_2f1afcc087c6470f9980967441e11b06 }}/slothh/cantus-web-app:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ed456b7cb0374176996a38ebe6e33d9d }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_78e98309999a46a6a15e8d6e1b16eeb8 }}/slothh/cantus-web-app:${{ github.sha }}'
