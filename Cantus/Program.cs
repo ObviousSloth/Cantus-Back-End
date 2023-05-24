@@ -1,4 +1,5 @@
 using Cantus.Data;
+using Cantus.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.OpenApi.Models;
@@ -16,6 +17,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -46,7 +48,9 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-
+var service = new FileService();
+await service.ListBlobContainersAsync();
+await service.UploadFilesAsync();
 
 string connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
