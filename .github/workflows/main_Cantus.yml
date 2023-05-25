@@ -48,4 +48,4 @@ jobs:
         app-name: 'Cantus'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_e497457113944764a94ada20a026d4da }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3c23ae32a1854906a334b8d9e16684be }}/slothh/cantus-web-app:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_3c23ae32a1854906a334b8d9e16684be }}/cantus-web-app:${{ github.sha }}'
