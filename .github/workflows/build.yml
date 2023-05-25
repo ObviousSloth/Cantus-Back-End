@@ -45,6 +45,6 @@ jobs:
         shell: powershell
         working-directory: ..\Cantus-Back-End\Cantus
         run: |
-          .sonar\scanner\.sonar\scanner\dotnet-sonarscanner begin /k:"ObviousSloth_Cantus-Back-End" /o:"obvioussloth" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build  Cantus.csproj
-          .sonar\scanner\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .\Cantus\.sonar\scanner\.sonar\scanner\dotnet-sonarscanner begin /k:"ObviousSloth_Cantus-Back-End" /o:"obvioussloth" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build  
+          .\Cantus\.sonar\scanner\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
