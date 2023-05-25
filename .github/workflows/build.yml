@@ -34,7 +34,7 @@ jobs:
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
-        working-directory: ..\Cantus-Back-End\Cantus
+        working-directory: ./Cantus
         run: |
          New-Item -Path .sonar\scanner -ItemType Directory
          dotnet tool update dotnet-sonarscanner --tool-path .sonar\scanner
@@ -43,7 +43,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         shell: powershell
+        working-directory: ./Cantus
         run: |
-          .\Cantus\.sonar\scanner\dotnet-sonarscanner begin /k:"ObviousSloth_Cantus-Back-End_Cantus" /o:"obvioussloth" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build ./Cantus/Cantus.csproj
-          .\Cantus\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"ObviousSloth_Cantus-Back-End_Cantus" /o:"obvioussloth" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build ./Cantus.csproj
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
