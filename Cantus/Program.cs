@@ -48,10 +48,7 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
-var service = new FileService();
-await service.ListBlobContainersAsync();
-await service.UploadFilesAsync();
-
+builder.Services.AddSingleton<FileService>();
 string connString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
